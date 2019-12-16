@@ -1,0 +1,52 @@
+{
+  "name": "alaexplorerjs-v4.0.2",
+  "version": "4.0.2",
+  "description": "General purpose library for the ALA blockchain.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha src/*.test.js",
+    "coverage": "istanbul cover _mocha -- -R spec src/*.test.js",
+    "coveralls": "npm run coverage && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
+    "prepublish": "npm run prepublish_lib && npm run prepublish_test",
+    "prepublish_lib": "node_modules/babel-cli/bin/babel.js src --out-dir lib",
+    "prepublish_test": "mocha lib/*.test.js",
+    "browserify": "mkdir -p dist && browserify -o dist/ala.js -s Ala src/index.js",
+    "build": "npm run prepublish && npm run browserify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ALADIN-Network/alaexplorerjs-v4.0.2.git"
+  },
+  "keywords": [
+    "ALA",
+    "Blockchain"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ALADIN-Network/alaexplorerjs-v4.0.2/issues"
+  },
+  "homepage": "https://github.com/ALADIN-Network/alaexplorerjs-v4.0.2#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "browserify": "^14.4.0",
+    "coveralls": "^2.13.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.4.2"
+  },
+  "dependencies": {
+    "binaryen": "^37.0.0",
+    "create-hash": "^1.1.3",
+    "alaexplorerjs-v4.0.2-api-v2.0.1": "^2.0.1",
+    "alaexplorerjs-v4.0.2-ecc-v1.6.1": "^1.6.1",
+    "alaexplorerjs-v4.0.2-json-v2.0.2": "^2.0.2",
+    "alaexplorerjs-fcbuffer-v2.0.0": "^2.0.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  }
+}
