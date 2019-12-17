@@ -1,7 +1,7 @@
-const ecc = require('alaexplorerjs-v4.0.2-ecc-v1.6.1')
-const json = require('alaexplorerjs-v4.0.2-json-v2.0.2')
-const Fcbuffer = require('alaexplorerjs-fcbuffer-v2.0.0')
-const api = require('alaexplorerjs-v4.0.2-api-v2.0.1')
+const ecc = require('alaexplorerjs4-ecc-v1.6.1')
+const json = require('alaexplorerjs4-json-v2.0.2')
+const Fcbuffer = require('alafcbuffer20')
+const api = require('alaexplorerjs4-api-v2.0.1')
 
 const Structs = require('./structs')
 const AbiCache = require('./abi-cache')

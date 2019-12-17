@@ -1,14 +1,14 @@
-[![Build Status](https://travis-ci.org/ALAIO/alaexplorerjs-v4.0.2.svg?branch=master)](https://travis-ci.org/ALAIO/alaexplorerjs-v4.0.2)
-[![NPM](https://img.shields.io/npm/v/alaexplorerjs-v4.0.2.svg)](https://www.npmjs.org/package/alaexplorerjs-v4.0.2)
+[![Build Status](https://travis-ci.org/ALAIO/alaexplorerjs4.svg?branch=master)](https://travis-ci.org/ALAIO/alaexplorerjs4)
+[![NPM](https://img.shields.io/npm/v/alaexplorerjs4.svg)](https://www.npmjs.org/package/alaexplorerjs4)
 
-# alaexplorerjs-v4.0.2
+# alaexplorerjs4
 
 General purpose library for the ALA blockchain.
 
 ### Usage (read-only)
 
 ```javascript
-Ala = require('alaexplorerjs-v4.0.2') // Or Ala = require('./src')
+Ala = require('alaexplorerjs4') // Or Ala = require('./src')
 
 // API, note: testnet uses alad at localhost (until there is a testnet)
 ala = Ala.Testnet()
@@ -35,13 +35,13 @@ ala.getInfo({}).then(result => {console.log(result)})
 ```
 
 API methods and documentation are generated from:
-* [chain.json](https://github.com/ALADIN-Network/alaexplorerjs-v4.0.2-json-v2.0.2/blob/master/api/v1/chain.json)
-* [account_history.json](https://github.com/ALADIN-Network/alaexplorerjs-v4.0.2-json-v2.0.2/blob/master/api/v1/account_history.json)
+* [chain.json](https://github.com/ALADIN-Network/alaexplorerjs4-json-v2.0.2/blob/master/api/v1/chain.json)
+* [account_history.json](https://github.com/ALADIN-Network/alaexplorerjs4-json-v2.0.2/blob/master/api/v1/account_history.json)
 
 ### Configuration
 
 ```js
-Ala = require('alaexplorerjs-v4.0.2') // Or Ala = require('./src')
+Ala = require('alaexplorerjs4') // Or Ala = require('./src')
 
 config = {
   httpEndpoint: 'http://127.0.0.1:8888',
@@ -86,7 +86,7 @@ options = {
 ### Usage (read/write)
 
 ```javascript
-Ala = require('alaexplorerjs-v4.0.2') // Or Ala = require('./src')
+Ala = require('alaexplorerjs4') // Or Ala = require('./src')
 
 ala = Ala.Testnet({keyProvider: '5HzzqBmg4DeneRqNRznPiBubRDGEPdcVjGZCTMGjGJWJubKm2Pe'})
 
@@ -104,7 +104,7 @@ ala.transfer('inita', 'initb', 1, 'memo', options)
 ala.transfer('inita', 'initb', 1, '', false)
 ```
 
-Read-write API methods and documentation are generated from this [schema](https://github.com/ALADIN-Network/alaexplorerjs-v4.0.2-json-v2.0.2/blob/master/schema/generated.json).
+Read-write API methods and documentation are generated from this [schema](https://github.com/ALADIN-Network/alaexplorerjs4-json-v2.0.2/blob/master/schema/generated.json).
 
 For more advanced signing, see `keyProvider` in the [unit test](./index.test.js).
 
@@ -121,7 +121,7 @@ For example:
 
 
 ```javascript
-Ala = require('alaexplorerjs-v4.0.2') // Or Ala = require('./src')
+Ala = require('alaexplorerjs4') // Or Ala = require('./src')
 
 initaPrivate = '5HzzqBmg4DeneRqNRznPiBubRDGEPdcVjGZCTMGjGJWJubKm2Pe'
 initaPublic = 'ALA8dM36QedcUfPTNF7maThtRqHP5xvCqMsYiHUz1Rz7sPfhvCYuo'
@@ -143,7 +143,7 @@ ala.newaccount({
 ### Contract
 
 ```javascript
-Ala = require('alaexplorerjs-v4.0.2') // Or Ala = require('./src')
+Ala = require('alaexplorerjs4') // Or Ala = require('./src')
 let {ecc} = Ala.modules
 
 initaPrivate = '5HzzqBmg4DeneRqNRznPiBubRDGEPdcVjGZCTMGjGJWJubKm2Pe'
@@ -186,7 +186,7 @@ ala.contract('currency').then(currency => {
 Blockchain level atomic operations.  All will pass or fail.
 
 ```javascript
-Ala = require('alaexplorerjs-v4.0.2') // Or Ala = require('./src')
+Ala = require('alaexplorerjs4') // Or Ala = require('./src')
 
 keyProvider = [
   '5HzzqBmg4DeneRqNRznPiBubRDGEPdcVjGZCTMGjGJWJubKm2Pe',
@@ -236,7 +236,7 @@ testnet.contract('currency').then(currency => {
 A manual transaction provides for more flexibility.
 
 ```javascript
-Ala = require('alaexplorerjs-v4.0.2') // Or Ala = require('./src')
+Ala = require('alaexplorerjs4') // Or Ala = require('./src')
 
 ala = Ala.Testnet({keyProvider: '5HzzqBmg4DeneRqNRznPiBubRDGEPdcVjGZCTMGjGJWJubKm2Pe'})
 
@@ -264,7 +264,7 @@ ala.transaction({
 
 # Development
 
-From time-to-time the alaexplorerjs-v4.0.2 and alad binary format will change between releases
+From time-to-time the alaexplorerjs4 and alad binary format will change between releases
 so you may need to start `alad` with the `--skip-transaction-signatures` parameter
 to get your transactions to pass.
 
@@ -280,7 +280,7 @@ Use Node v8+ to `package-lock.json`.
 
 # Related Libraries
 
-These libraries are exported from `alaexplorerjs-v4.0.2` or may be used separately.
+These libraries are exported from `alaexplorerjs4` or may be used separately.
 
 ```javascript
 var {api, ecc, json, Fcbuffer} = Ala.modules
@@ -288,23 +288,23 @@ var {api, ecc, json, Fcbuffer} = Ala.modules
 
 # About
 
-* alaexplorerjs-v4.0.2-api-v2.0.1 [[Github](https://github.com/ALADIN-Network/alaexplorerjs-v4.0.2-api-v2.0.1), [NPM](https://www.npmjs.org/package/alaexplorerjs-v4.0.2-api-v2.0.1)]
+* alaexplorerjs4-api-v2.0.1 [[Github](https://github.com/ALADIN-Network/alaexplorerjs4-api-v2.0.1), [NPM](https://www.npmjs.org/package/alaexplorerjs4-api-v2.0.1)]
   * Remote API to an ALA blockchain node (alad)
   * Use this library directly if you need read-only access to the blockchain
     (don't need to sign transactions).
 
-* alaexplorerjs-v4.0.2-ecc-v1.6.1 [[Github](https://github.com/ALADIN-Network/alaexplorerjs-v4.0.2-ecc-v1.6.1), [NPM](https://www.npmjs.org/package/alaexplorerjs-v4.0.2-ecc-v1.6.1)]
+* alaexplorerjs4-ecc-v1.6.1 [[Github](https://github.com/ALADIN-Network/alaexplorerjs4-ecc-v1.6.1), [NPM](https://www.npmjs.org/package/alaexplorerjs4-ecc-v1.6.1)]
   * Private Key, Public Key, Signature, AES, Encryption / Decryption
   * Validate public or private keys
   * Encrypt or decrypt with ALA compatible checksums
   * Calculate a shared secret
 
-* alaexplorerjs-v4.0.2-json-v2.0.2 [[Github](https://github.com/ALADIN-Network/alaexplorerjs-v4.0.2-json-v2.0.2), [NPM](https://www.npmjs.org/package/alaexplorerjs-v4.0.2-json-v2.0.2)]
+* alaexplorerjs4-json-v2.0.2 [[Github](https://github.com/ALADIN-Network/alaexplorerjs4-json-v2.0.2), [NPM](https://www.npmjs.org/package/alaexplorerjs4-json-v2.0.2)]
   * Blockchain definitions (api method names, blockchain operations, etc)
   * Maybe used by any language that can parse json
   * Kept up-to-date
 
-* Fcbuffer [[Github](https://github.com/ALADIN-Network/alaexplorerjs-v4.0.2-alaexplorerjs-fcbuffer-v2.0.0), [NPM](https://www.npmjs.org/package/alaexplorerjs-fcbuffer-v2.0.0)]
+* Fcbuffer [[Github](https://github.com/ALADIN-Network/alaexplorerjs4-alafcbuffer20), [NPM](https://www.npmjs.org/package/alafcbuffer20)]
   * Binary serialization used by the blockchain
   * Clients sign the binary form of the transaction
   * Essential so the client knows what it is signing
@@ -312,8 +312,8 @@ var {api, ecc, json, Fcbuffer} = Ala.modules
 # Browser
 
 ```bash
-git clone https://github.com/ALADIN-Network/alaexplorerjs-v4.0.2.git
-cd alaexplorerjs-v4.0.2
+git clone https://github.com/ALADIN-Network/alaexplorerjs4.git
+cd alaexplorerjs4
 npm install
 npm run build
 # builds: ./dist/ala.js

@@ -1,8 +1,8 @@
 const assert = require('assert')
-const ecc = require('alaexplorerjs-v4.0.2-ecc-v1.6.1')
-const Fcbuffer = require('alaexplorerjs-fcbuffer-v2.0.0')
+const ecc = require('alaexplorerjs4-ecc-v1.6.1')
+const Fcbuffer = require('alafcbuffer20')
 const createHash = require('create-hash')
-const {processArgs} = require('alaexplorerjs-v4.0.2-api-v2.0.1')
+const {processArgs} = require('alaexplorerjs4-api-v2.0.1')
 const Structs = require('./structs')
 
 module.exports = writeApiGen
@@ -26,7 +26,7 @@ function writeApiGen(Network, network, structs, config) {
   for(let type in Network.schema) {
     if(!/^[a-z]/.test(type)) {
       // Only lower case structs will work in a transaction message
-      // See alaexplorerjs-v4.0.2-json-v2.0.2 generated.json
+      // See alaexplorerjs4-json-v2.0.2 generated.json
       continue
     }
     if(type === 'transaction') {
